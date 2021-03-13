@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+html {
+    background: linear-gradient( hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+    background-position: top 50vh, bottom 50vh;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100%;
+    -webkit-user-select: none;
+}
+
+body {
+    font-size: 12px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.container {
+    background: white;
+    border-radius: 20px;
+    margin: auto;
+    max-height: 100%;
+    height: 70%;
+    width: 320px;
+    box-shadow: -10px 0 100px -40px black;
+}
+
+.img-wrapper {
+    position: relative;
+    height: 25%;
+    background-image: url(/images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: center top -10px;
+}
+
+.bg-image {
+    position: absolute;
+    height: 160px;
+    width: 70%;
+    top: -85px;
+    right: 20%;
+}
+
+/* question and answers layout */
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+
+.questions-wrapper {
+    width: 100%;
+    position: relative;
+    transition: .5s ease-in-out;
+}
+
+.question {
+    margin: auto;
+    padding: 15px 0;
+    width: 90%;
+    border-bottom: 1px solid rgb(226, 220, 220);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: relative;
+}
+
+.question a {
+    text-decoration: none;
+    color: black;
+    padding: 18px 0;
+}
+
+.arrow {
+    position: absolute;
+    height: 8px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: .5;
+    transition: .3s ease-in-out;
+}
+
+/* targetting layout */
+
+.question:target .answer {
+    max-height: 50px;
+    padding-top: 13px;
+    font-weight: 400;
+}
+
+.question:target {
+    font-weight: 700;
+}
+
+.question:target .arrow {
+    transform: rotate(180deg);
+}
+
+/* Desktop responsive layout */
+
+@media (min-width: 1050px) {
+    .container {
+        width: 900px;
+        transition: .1s ease-in-out;
+        display: flex;
+    }
+    .questions-wrapper {
+        
+        margin-top: 8%;
+        text-align: left;
+    }
+
+    .questions-wrapper h1 {
+        text-align: left;
+        padding-left: 20px;
+    }
+    
+    .img-wrapper {
+        height: 100%;
+        width: 90%;
+        background-image: url(/images/illustration-woman-online-desktop.svg), url(/images/bg-pattern-desktop.svg);
+        background-position: center right, right center;
+    }
+
+    .img-wrapper .bg-image {
+        display: none;
+    }
+
+    .box {
+        position: absolute;
+        left: -85px;
+        bottom: 23%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .box {
+        display: none;
+    }
+}
